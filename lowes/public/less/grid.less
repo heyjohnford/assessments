@@ -1,0 +1,94 @@
+// This area uses the flexbox pattern to get some smooth sexy grids.
+
+.grid {
+  display: flex;
+  -webkit-flex-flow: wrap;
+  flex-flow: wrap;
+}
+
+.grid-cell {
+  flex: 1;
+}
+
+/* With gutters */
+.grid--gutters {
+  margin: -1em 0 0 -1em;
+}
+.grid--gutters > .grid-cell {
+  padding: 1em 0 0 1em;
+}
+
+/* Alignment per row */
+.grid--top {
+  align-items: flex-start;
+}
+.grid--bottom {
+  align-items: flex-end;
+}
+.grid--center {
+  align-items: center;
+}
+
+/* Alignment per cell */
+.grid-cell--top {
+  align-self: flex-start;
+}
+.grid-cell--bottom {
+  align-self: flex-end;
+}
+.grid-cell--center {
+  align-self: center;
+}
+
+// A responsive approach below
+
+/* Small to medium screens */
+@media (min-width: 24em) {
+  .grid--3of4 > .grid-cell,
+  .grid--1of2 > .grid-cell,
+  .grid--1of3 > .grid-cell,
+  .grid--1of4 > .grid-cell {
+    flex: 0 0 100%;
+  }
+}
+
+@media (min-width: 60em) {
+  .grid--3of4 > .grid-cell,
+  .grid--1of2 > .grid-cell,
+  .grid--1of3 > .grid-cell,
+  .grid--1of4 > .grid-cell {
+    flex: 0 0 50%;
+    &.grid--fit-mobile {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+@media (min-width: 62.5em) {
+  .grid--fit > .grid-cell {
+    flex: 1;
+  }
+  .grid--full > .grid-cell {
+    flex: 0 0 100%;
+  }
+  .grid--3of4 > .grid-cell {
+    flex: 0 0 75%;
+  }
+  .grid--1of2 > .grid-cell {
+    flex: 0 0 50%
+  }
+  .grid--1of3 > .grid-cell {
+    flex: 0 0 33.3333%
+  }
+  .grid--1of4 > .grid-cell {
+    flex: 0 0 25%
+  }
+  .grid--3of4 > .grid-cell,
+  .grid--1of2 > .grid-cell,
+  .grid--1of3 > .grid-cell,
+  .grid--1of4 > .grid-cell {
+    &.grid--fit-mobile {
+      flex: auto;
+    }
+  }
+}

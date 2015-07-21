@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="John Amiah Ford">
+  <title>Hot Catz</title>
+  <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <script type="text/x-handlebars" data-template-name="application">
+
+    <section id="application-view" class="row">
+      <div class="twelve columns">
+        <a class="logo medium-4 columns" href="/">{{App.NAME}}</a>
+        <p class="medium-8 columns tagline">We won't stop until we find the cutest cat in the world!</p>
+        <hr>
+        {{outlet}}
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-wrap row">
+        <a class="footer-logo" href="/"></a>
+        <p class="copy">&copy; 2011, {{App.NAME}}. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
+
+    <section id="index-view">
+
+      {{partial '_catVote'}}
+
+      <section class="whats-this row">
+        <div class="twelve columns">
+          <h1 class="title">What's<span>This</span></h1>
+          <div class="upload-box">
+            <p class="upload-descriptoin medium-3 columns">Hotcatz pits one feline against another in furry vs furry battle. Does YOUR cat have what it takes to be a Hotcatz superstar?</p>
+            <form id="upload-form" class="upload-form medium-9 columns" method="post" action="/upload" enctype="multipart/form-data">
+              <div class="preview-thumb medium-6 columns">
+                <div class="preview">
+                  <span>
+                    <span class="instructions">Select an image of your cat</span>
+                  </span>
+                </div>
+              </div>
+              <div class="input-data medium-6 columns">
+                <input class="cat-name-upload" type="text" name="cat_name" placeholder="Your cat's name">
+                <input class="file-upload" type="file" name="file_upload" placeholder="choose file...">
+                <button type="submit" class="submit-form">Upload!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <section class="leaderboards row">
+        <div class="twelve columns">
+          <h1 class="title">Leader<span>board:</span></h1>
+          <div class="leaderboard-box">
+            <ul class="big-three">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            {{partial 'catList'}}
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="cats">
+
+    <section id="cats-view">
+      {{partial 'catList'}}
+    </section>
+
+    {{outlet}}
+
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="_catVote">
+    <section class="hero row">
+      <div class="hero-wrap twelve columns">
+        <div class="left-hero-container medium-6 columns">
+          <a href="#" {{action 'mainVote' App.firstCat.name App.firstCat.vote}}>
+            <img class="match-image" {{bind-attr src="App.firstCat.picture"}} {{bind-attr alt="App.firstCat.name"}}>
+            <div class="match-ribbon blue">
+              <i class="thumbs-up"></i>
+              <!-- // Global namespace in the template just feels dirty -->
+              <p class="battle-name">{{App.firstCat.name}}</p>
+            </div>
+          </a>
+        </div>
+        <div class="right-hero-container medium-6 columns">
+          <a href="#" {{action 'mainVote' App.secondCat.name App.secondCat.vote}}>
+            <img class="match-image" {{bind-attr src="App.secondCat.picture"}} {{bind-attr alt="App.secondCat.name"}}>
+            <div class="match-ribbon orange">
+              <i class="thumbs-up"></i>
+              <p class="battle-name">{{App.secondCat.name}}</p>
+            </div>
+          </a>
+        </div>
+        <div class="versus">
+          <span>VS</span>
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="_catList">
+    <ul class="contestants">
+      {{#each cat in controller}}
+        <a href="#" {{action 'addVote' cat.name cat.vote}}>
+        <li {{bind-attr class=":cat-id cat.id"}}>
+        <figure>
+          <img class="cat-thumb" {{bind-attr src="cat.picture"}} {{bind-attr alt="cat.name"}}>
+          <span class="cat-name-popup">
+            <span {{bind-attr data-vote="cat.vote"}} class="cat-vote-amount"{{cat.vote}} votes</span>
+            {{cat.name}}
+            <small></small>
+          </span>
+        </figure>
+        </li>
+        </a>
+      {{/each}}
+      </ul>
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.min.js"></script>
+  <script src="js/libs/handlebars-1.1.2.min.js"></script>
+  <script src="js/libs/ember-1.5.0.js"></script>
+  <script src="js/libs/ember-data-latest.min.js"></script>
+  <script src="js/libs/jquery.form.min.js"></script>
+  <script src="js/app.min.js"></script>
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <!-- <script src="tests/runner.js"></script> -->
+</body>
+</html>

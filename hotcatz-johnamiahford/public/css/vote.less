@@ -1,0 +1,111 @@
+.hero {
+  position: relative;
+  padding-top: 0.75em;
+}
+.hero-wrap {
+  padding: 0;
+}
+.left-hero-container,
+.right-hero-container {
+  position: relative;
+  .match-image {
+    &:hover {
+      border-color: #202020;
+    }
+  }
+}
+.left-hero-container .match-image {
+  -moz-box-shadow: 0 10px 6px -6px #999, -3px 0 10px rgba(0, 0, 0, 0.15), 0 -1px 0 #fff;
+  -webkit-box-shadow: 0 10px 6px -6px #999, -3px 0 10px rgba(0, 0, 0, 0.15), 0 -1px 0 #fff;
+  box-shadow: 0 10px 6px -6px #999, -3px 0 10px rgba(0, 0, 0, 0.15), 0 -1px 0 #fff;
+  &:hover + .blue .thumbs-up {
+    background-position: 0 -25px;
+  }
+}
+.right-hero-container .match-image {
+  -moz-box-shadow: 0 10px 6px -6px #999, 3px 0 10px rgba(0, 0, 0, 0.15), 0 -1px 0 #fff;
+  -webkit-box-shadow: 0 10px 6px -6px #999, 3px 0 10px rgba(0, 0, 0, 0.15), 0 -1px 0 #fff;
+  box-shadow: 0 10px 6px -6px #999, 3px 0 10px rgba(0, 0, 0, 0.15), 0 -1px 0 #fff;
+  &:hover + .orange .thumbs-up {
+    background-position: -20px -25px;
+  }
+}
+.match-ribbon {
+  position: absolute;
+  top: 75%;
+  width: 254px;
+  height: 56px;
+  cursor: pointer;
+  &.blue {
+    background: url('/images/ribbon-blue.png') no-repeat;
+    left: 3px;
+    .thumbs-up {
+      float: left;
+      margin-left: 1.5em;
+      margin-right: 0.5em;
+      &:hover {
+        background-position: 0 -25px;
+      }
+    }
+    .battle-name {
+      text-shadow: 0 -1px 0 #1b6195;
+    }
+    &:hover .thumbs-up {
+      background-position: 0 -25px;
+    }
+  }
+  &.orange {
+    background: url('/images/ribbon-orange.png') no-repeat;
+    right: 2px;
+    .thumbs-up {
+      background-position: -20px 0;
+      float: right;
+      margin-right: 1.5em;
+      margin-left: 0.5em;
+      &:hover {
+        background-position: -20px -25px;
+      }
+    }
+    .battle-name {
+      float: right;
+      text-shadow: 0 -1px 0 #a15323;
+    }
+    &:hover .thumbs-up {
+      background-position: -20px -25px;
+    }
+  }
+}
+.match-image {
+  border: 7px solid @white;
+}
+.thumbs-up {
+  background: url('/images/thumbs-up.png') no-repeat;
+  display: block;
+  width: 20px;
+  height: 25px;
+  margin-top: 1em;
+}
+.battle-name {
+  color: @white;
+  font-weight: 800;
+  margin-top: 1em;
+  text-transform: uppercase;
+
+}
+.versus {
+  background: url('/images/vs.png') no-repeat;
+  color: @white;
+  width: 93px;
+  height: 51px;
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  text-align: center;
+  text-shadow: 0 -1px 0 @black;
+  font-size: 2em;
+  font-weight: 800;
+  padding-top: 0.15em;
+  margin-left: -46px;
+  margin-top: -25px;
+  z-index: 1;
+}

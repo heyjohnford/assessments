@@ -1,0 +1,39 @@
+.breadcrumbs {
+  font-size: small;
+  font-weight: 800;
+  text-align: right;
+  margin-top: 2em;
+  li {
+    display: inline-block;
+    margin-right: 2em;
+    position: relative;
+    &:after {
+      content: ">";
+      font-size: x-small;
+      position: absolute;
+      margin: 0 0.75em 0;
+    }
+    &:last-child {
+      color: @white;
+      border-bottom: 1px solid @white;
+      &:after {
+        content: "";
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 24em) and (max-width: 60em) {
+  .breadcrumbs {
+    text-align: center;
+    font-size: x-small;
+  }
+}
+
+@media (min-width: 60em) {
+  .navigation {
+    // Flex override for breadcrumbs area
+    flex: 0 0 75% !important;
+  }
+}

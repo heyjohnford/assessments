@@ -1,0 +1,60 @@
+{
+  "name": "lowes-assessment",
+  "version": "0.0.1",
+  "description": "NodeJS powered app for the place that never stops improving.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./public/js/app.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "lowes",
+    "assessment",
+    "nodejs",
+    "hapi",
+    "react",
+    "webpack",
+    "gulp"
+  ],
+  "author": "John Amiah Ford",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^2.1.1",
+    "good": "^6.1.2",
+    "good-console": "^5.0.0",
+    "handlebars": "^3.0.3",
+    "hapi": "^8.4.0",
+    "hapi-react": "^3.0.1",
+    "isomorphic-fetch": "^2.0.2",
+    "lodash": "^3.8.0",
+    "react": "^0.13.2"
+  },
+  "devDependencies": {
+    "babel": "^4.7.16",
+    "babel-core": "^4.7.16",
+    "babel-eslint": "^3.0.1",
+    "babel-loader": "^4.3.0",
+    "babel-runtime": "^5.2.6",
+    "css-loader": "^0.12.0",
+    "eslint": "^0.20.0",
+    "file-loader": "^0.8.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-css": "^0.1.0",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-react": "^3.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "html-loader": "^0.3.0",
+    "jest-cli": "^0.4.0",
+    "json-loader": "^0.5.1",
+    "jsx-loader": "^0.13.2",
+    "url-loader": "^0.5.5"
+  },
+  "jest": {
+    "scriptPreprocessor": "./preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "./node_modules/react"
+    ]
+  }
+}

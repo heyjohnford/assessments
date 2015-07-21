@@ -1,0 +1,80 @@
+@import 'variables.less';
+
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: @light_blue;
+  color: @default_color;
+  font-size: 100%;
+  line-height: 1.4;
+  font-family: 'Helventica Neue', Helvetica, Arial, sans-serif;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: @dark_blue;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.header {
+  color: @dark_blue;
+  margin-top: 1.5em;
+}
+
+// helpers
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.show-bullets {
+  li {
+    list-style: outside bullet;
+  }
+}
+
+@media (min-width: 24em) and (max-width: 60em) {
+  .mobile--image-fit {
+    margin: auto;
+    display: block;
+  }
+}
+
+@media (min-width: 24em) and (max-width: 60em) {
+  .show-bullets li {
+    list-style-position: inside;
+  }
+}

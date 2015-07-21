@@ -1,0 +1,132 @@
+.whats-this {
+  padding: 2em 0 1.5em;
+}
+.upload-box {
+  .transparent_container;
+  .border_radius;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+::-webkit-input-placeholder {
+   color: #666;
+}
+
+:-moz-placeholder {
+   color: #666;
+}
+
+::-moz-placeholder {
+   color: #666;
+}
+
+:-ms-input-placeholder {
+   color: #666;
+}
+.cat-name-upload.upload-error {
+  background: #f4cbcb;
+}
+.upload-descriptoin {
+  padding-top: 1em;
+}
+.preview {
+  width: 100%;
+  height: 100%;
+  border: 8px solid @white;
+  background: #e8e9e5;
+  color: @white;
+  text-align: center;
+  padding: 0;
+  height: 250px;
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  > span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 40%;
+    margin: auto;
+    padding: 0 1em;
+    span {
+      display: block;
+      padding: 0.5em;
+      background: rgba(0, 0, 0, 0.25);
+      text-shadow: 0 -1px 0 #777;
+      font-weight: 800;
+      .border_radius(4px);
+    }
+  }
+}
+.preview-thumb {
+  max-height: 100%;
+}
+// Upload form
+.upload-form {
+  border-left: 1px solid darken(@gray, 5%);
+  &:before {
+    content: "";
+    border-left: 1px solid @white;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+  }
+}
+.input-data {
+  padding-top: 1em;
+}
+// Override this style to no margins
+input[type=file] {
+  margin: 0;
+}
+.file-upload {
+  outline: none;
+  margin: 0;
+  &::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  &::before {
+    content: 'choose file...';
+    display: inline-block;
+    color: @white;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 800;
+    text-shadow: 0 -2px 1px #6c6c6c;
+    width: 100%;
+    padding: 0.5em 0;
+    cursor: pointer;
+    outline: none;
+    -moz-box-shadow: 0 3px 4px #696969 inset, 0 -1px 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 3px 4px #696969 inset, 0 -1px 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 4px #696969 inset, 0 -1px 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5);
+    .border_radius(30px);
+    .gradient(#b2b1b1, #929191);
+  }
+  &:hover::before {
+    background: darken(#b2b1b1, 5%);
+    cursor: pointer;
+  }
+  &:active::before {
+    background: darken(#b2b1b1, 50%);
+  }
+}
+.submit-form {
+  font-size: 1.5em;
+  font-weight: 800;
+  text-shadow: 0 -2px 1px #b74c0e;
+  width: 100%;
+  padding: 0.5em 0;
+  outline: none;
+  -moz-box-shadow: 0 3px 4px #f25100 inset, 0 -1px 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 3px 4px #f25100 inset, 0 -1px 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 3px 4px #f25100 inset, 0 -1px 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5);
+  .border_radius(30px);
+  .gradient;
+}

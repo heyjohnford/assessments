@@ -1,0 +1,77 @@
+// Variables
+@background_texture: #ebebeb url('/images/background.png');
+@primary_color: #38190b;
+@gray: #cccccc;
+@white: #fff;
+@black: #101010;
+// Fonts
+@font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@title_font: 'Helvetica Black', Helvetica, Arial, sans-serif;
+@title_light_font: 'Helvetica Light', Helvetica, Arial, sans-serif;
+// Mixins
+.border_radius (@radius: 6px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.gradient (@color1: #f59c01, @color2: #f25100) {
+  background: @color1;
+  background: -moz-linear-gradient(top, @color1 0%, @color2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2));
+  background: -webkit-linear-gradient(top, @color1 0%,@color2 100%);
+  background: -ms-linear-gradient(top, @color1 0%,@color2 100%);
+  background: linear-gradient(to bottom, @color1 0%,@color2 100%);
+}
+.transparent_container {
+  background: rgba(150, 150, 150, 0.2);
+  padding: 2em 1em;
+  -moz-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(255, 255, 255, 0.7), 0 1px 0 rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(255, 255, 255, 0.7), 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(255, 255, 255, 0.7), 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.transition_effect {
+  -moz-transition: opacity .3s linear, top .2s linear;
+  -webkit-transition: opacity .3s linear, top .2s linear;
+  transition: opacity .3s linear, top .2s linear;
+}
+// Peace of mind
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background: @background_texture;
+  color: @primary_color;
+  font-family: @font;
+}
+hr {
+  border: none;
+  border-top: 1px solid @gray;
+  border-bottom: 1px solid @white;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+}
+.ember-application {
+  margin: 20px 0 0;
+}
+.title {
+  font-family: @title_font;
+  font-weight: 800;
+  font-size: 1.875em;
+  text-transform: uppercase;
+  span {
+    font-family: @title_light_font;
+    font-weight: 100;
+  }
+}
+// Helpers
+.float-right {
+  float: right;
+}

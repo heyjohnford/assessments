@@ -1,0 +1,17 @@
+source 'http://rubygems.org'
+gem 'sinatra', :require => 'sinatra/base'
+gem 'thin'
+gem 'mongo'
+gem 'bson_ext'
+gem 'handlebars'
+gem 'pony'
+gem 'rdiscount'
+gem 'rack-cache'
+gem 'bcrypt'
+# gem 'rmagick'
+gem 'passenger', :group => :production
+group :development do
+  gem 'pry'
+  gem 'shotgun'
+  gem 'rspec'
+end
